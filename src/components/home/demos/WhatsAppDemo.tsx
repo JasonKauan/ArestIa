@@ -39,7 +39,7 @@ function Bubble({
 }
 
 /** Conversa estilo mensageiro: cliente pede um horário, o assistente oferece opções e confirma. */
-export function WhatsAppDemo() {
+export function WhatsAppDemo({ onDark = false }: { onDark?: boolean }) {
   const reduced = useReducedMotion();
   const [step, setStep] = useState<"choose" | "typing" | "done">("choose");
   const [slot, setSlot] = useState<string | null>(null);
@@ -71,7 +71,7 @@ export function WhatsAppDemo() {
   return (
     <div className="mx-auto w-full max-w-sm">
       <div className="mb-4 flex justify-center">
-        <DemoBadge className="border-navy/20 text-navy/55" />
+        <DemoBadge className={onDark ? undefined : "border-navy/20 text-navy/55"} />
       </div>
 
       <div className="overflow-hidden rounded-[2rem] border border-navy/10 bg-[#e9eef4] shadow-[0_30px_80px_-30px_rgb(1_12_34/0.45)]">
@@ -153,12 +153,17 @@ export function WhatsAppDemo() {
 
       <div className="mt-4 h-6 text-center">
         {step === "choose" ? (
-          <p className="text-[13px] text-navy/50">Toque em um horário para testar.</p>
+          <p className={cn("text-[13px]", onDark ? "text-mist/55" : "text-navy/50")}>
+            Toque em um horário para testar.
+          </p>
         ) : (
           <button
             type="button"
             onClick={reset}
-            className="text-[13px] text-royal underline underline-offset-4 transition-colors hover:text-navy"
+            className={cn(
+              "text-[13px] underline underline-offset-4 transition-colors",
+              onDark ? "text-cyan hover:text-mist" : "text-royal hover:text-navy",
+            )}
           >
             Reiniciar demonstração
           </button>
