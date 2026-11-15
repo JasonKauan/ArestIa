@@ -53,7 +53,7 @@ export function TechnologyExplorer() {
                 <span
                   className={cn(
                     "mt-1 font-mono text-xs transition-colors duration-300",
-                    isActive ? "text-royal" : "text-navy/40",
+                    isActive ? "text-royal" : "text-navy/60",
                   )}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -62,7 +62,7 @@ export function TechnologyExplorer() {
                   <span
                     className={cn(
                       "block text-lg font-medium tracking-tight transition-colors duration-300 sm:text-xl",
-                      isActive ? "text-navy" : "text-navy/55 group-hover:text-navy",
+                      isActive ? "text-navy" : "text-navy/60 group-hover:text-navy",
                     )}
                   >
                     {pillar.title}
@@ -175,7 +175,7 @@ export function TechnologyExplorer() {
                   y={n.labelY}
                   textAnchor={n.anchor}
                   fill="#010C22"
-                  fillOpacity={isActive ? 0.9 : 0.5}
+                  fillOpacity={isActive ? 0.9 : 0.65}
                   className="font-mono"
                   fontSize="12"
                   letterSpacing="1.5"

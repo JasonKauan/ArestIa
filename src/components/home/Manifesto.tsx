@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -51,7 +50,7 @@ export function Manifesto() {
             {TRANSFORMATIONS.map((item, i) => (
               <Reveal key={item.from} inView delay={i * 0.12} y={16}>
                 <li className="group flex items-center gap-5 border-t border-navy/15 py-5 last:border-b">
-                  <span className="w-28 shrink-0 font-mono text-xs uppercase tracking-[0.15em] text-navy/50">
+                  <span className="w-28 shrink-0 font-mono text-xs uppercase tracking-[0.15em] text-navy/60">
                     {item.from}
                   </span>
                   <span className="relative h-px flex-1 bg-navy/15">

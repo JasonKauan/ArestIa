@@ -1,4 +1,4 @@
-import { LegalDocument } from "@/components/legal/LegalDocument";
+import { LegalDocument } from "@/components/legal/LegalComponents";
 import { LEGAL_UPDATED, TERMS_SECTIONS } from "@/lib/legal-content";
 import { pageMetadata } from "@/lib/seo";
 

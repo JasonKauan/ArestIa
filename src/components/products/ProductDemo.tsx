@@ -37,7 +37,7 @@ export function ProductDemo({ slug, title, note }: ProductDemoProps) {
           {slug === "erp" && <DashboardDemo />}
         </Reveal>
 
-        <p className="mt-6 text-center text-[13px] text-mist/45">{note}</p>
+        <p className="mt-6 text-center text-[13px] text-mist/55">{note}</p>
       </Container>
     </Section>
   );

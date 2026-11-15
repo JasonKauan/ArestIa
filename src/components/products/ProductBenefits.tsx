@@ -30,7 +30,7 @@ export function ProductBenefits({ integrations, benefits }: ProductBenefitsProps
                 </li>
               ))}
             </ul>
-            <p className="mt-5 text-[13px] text-navy/50">
+            <p className="mt-5 text-[13px] text-navy/60">
               As integrações são definidas conforme o escopo de cada projeto.
             </p>
           </Reveal>

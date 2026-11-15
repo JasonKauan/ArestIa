@@ -30,7 +30,7 @@ function Bubble({
       )}
     >
       <div>{children}</div>
-      <div className="mt-1 flex items-center justify-end gap-1 text-[10px] text-navy/45">
+      <div className="mt-1 flex items-center justify-end gap-1 text-[10px] text-navy/60">
         {time}
         {mine && <CheckCheck className="size-3.5 text-[#53bdeb]" aria-hidden />}
       </div>
@@ -71,7 +71,7 @@ export function WhatsAppDemo({ onDark = false }: { onDark?: boolean }) {
   return (
     <div className="mx-auto w-full max-w-sm">
       <div className="mb-4 flex justify-center">
-        <DemoBadge className={onDark ? undefined : "border-navy/20 text-navy/55"} />
+        <DemoBadge className={onDark ? undefined : "border-navy/20 text-navy/65"} />
       </div>
 
       <div className="overflow-hidden rounded-[2rem] border border-navy/10 bg-[#e9eef4] shadow-[0_30px_80px_-30px_rgb(1_12_34/0.45)]">
@@ -153,7 +153,7 @@ export function WhatsAppDemo({ onDark = false }: { onDark?: boolean }) {
 
       <div className="mt-4 h-6 text-center">
         {step === "choose" ? (
-          <p className={cn("text-[13px]", onDark ? "text-mist/55" : "text-navy/50")}>
+          <p className={cn("text-[13px]", onDark ? "text-mist/55" : "text-navy/60")}>
             Toque em um horário para testar.
           </p>
         ) : (

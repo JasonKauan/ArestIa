@@ -115,7 +115,7 @@ export function Solutions() {
           <Reveal inView>
             <DashboardDemo />
           </Reveal>
-          <p className="mt-5 text-center text-[13px] text-mist/45">
+          <p className="mt-5 text-center text-[13px] text-mist/55">
             Interface ilustrativa com dados fictícios. O sistema é personalizado conforme a
             realidade de cada operação.
           </p>

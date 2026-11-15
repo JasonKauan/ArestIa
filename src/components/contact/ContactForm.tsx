@@ -24,7 +24,7 @@ type ContactFormProps = {
 };
 
 const inputClass =
-  "w-full rounded-xl border border-navy/20 bg-white px-4 text-base text-navy placeholder:text-navy/35 " +
+  "w-full rounded-xl border border-navy/20 bg-white px-4 text-base text-navy placeholder:text-navy/60 " +
   "transition-[border-color,box-shadow] duration-200 hover:border-navy/40 " +
   "focus-visible:border-royal focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-royal/15 " +
   "aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/10";
@@ -46,7 +46,7 @@ function Field({
     <div>
       <label htmlFor={id} className="mb-2 flex items-baseline gap-2 text-sm font-medium text-navy">
         {label}
-        {optional && <span className="text-xs font-normal text-navy/45">opcional</span>}
+        {optional && <span className="text-xs font-normal text-navy/60">opcional</span>}
       </label>
       {children}
       {error && (

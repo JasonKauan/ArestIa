@@ -109,7 +109,7 @@ export function DashboardDemo() {
 
         <div className="min-w-0 p-5 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h4 className="text-lg font-semibold tracking-tight">Visão geral</h4>
+            <p className="text-lg font-semibold tracking-tight">Visão geral</p>
             <div
               role="group"
               aria-label="Período"
@@ -135,9 +135,9 @@ export function DashboardDemo() {
           <dl className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
             {kpis.map((kpi) => (
               <div key={kpi.label} className="rounded-xl border border-mist/10 bg-mist/[0.03] p-4">
-                <dt className="text-[11px] uppercase tracking-[0.14em] text-mist/45">{kpi.label}</dt>
+                <dt className="text-[11px] uppercase tracking-[0.14em] text-mist/55">{kpi.label}</dt>
                 <dd className="mt-2 text-xl font-semibold tracking-tight">{kpi.value}</dd>
-                <p className="mt-1 text-[11px] text-mist/40">{kpi.hint}</p>
+                <p className="mt-1 text-[11px] text-mist/55">{kpi.hint}</p>
               </div>
             ))}
           </dl>
@@ -177,7 +177,7 @@ export function DashboardDemo() {
                       className="w-full max-w-4 rounded-t bg-royal"
                     />
                   </div>
-                  <span className="text-center font-mono text-[10px] text-mist/40">{bucket}</span>
+                  <span className="text-center font-mono text-[10px] text-mist/55">{bucket}</span>
                 </div>
               ))}
             </div>
@@ -187,7 +187,7 @@ export function DashboardDemo() {
             <table className="w-full min-w-[28rem] text-left text-[13px]">
               <caption className="sr-only">Últimas movimentações (dados fictícios)</caption>
               <thead>
-                <tr className="border-b border-mist/10 text-[11px] uppercase tracking-[0.14em] text-mist/40">
+                <tr className="border-b border-mist/10 text-[11px] uppercase tracking-[0.14em] text-mist/55">
                   <th className="pb-3 font-normal">Código</th>
                   <th className="pb-3 font-normal">Origem</th>
                   <th className="pb-3 font-normal">Valor</th>

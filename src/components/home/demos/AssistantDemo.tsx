@@ -146,7 +146,7 @@ export function AssistantDemo() {
       </div>
 
       <div className="border-t border-mist/10 px-5 py-4 sm:px-6">
-        <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-mist/40">
+        <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-mist/55">
           Experimente perguntar
         </p>
         <div className="flex flex-wrap gap-2">
