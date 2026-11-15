@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { FinalCTA } from "@/components/home/FinalCTA";
@@ -8,13 +7,14 @@ import { Section } from "@/components/ui/Section";
 import { Eyebrow, Heading, Text } from "@/components/ui/Typography";
 import { PRODUCTS } from "@/lib/navigation";
 import { PRODUCT_DETAILS } from "@/lib/products";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Soluções",
   description:
     "Conheça as soluções da ArestIA: LLM personalizado, chatbot de agendamento no WhatsApp e sistema de gestão empresarial.",
-  alternates: { canonical: "/solucoes" },
-};
+  path: "/solucoes",
+});
 
 export default function SolucoesPage() {
   return (

@@ -12,6 +12,7 @@ import { SITE } from "@/lib/constants";
 import { DEMO_HREF, PRODUCTS } from "@/lib/navigation";
 import { PRODUCT_PAGES } from "@/lib/product-pages";
 import { PRODUCT_DETAILS } from "@/lib/products";
+import { pageMetadata } from "@/lib/seo";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -25,18 +26,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const page = PRODUCT_PAGES[slug];
   if (!product || !page) return {};
 
-  const title = `${product.name} — ${product.label}`;
-  return {
-    title,
+  return pageMetadata({
+    title: `${product.name} — ${product.label}`,
     description: page.seoDescription,
-    alternates: { canonical: `/solucoes/${slug}` },
-    openGraph: {
-      title,
-      description: page.seoDescription,
-      url: `/solucoes/${slug}`,
-      type: "website",
-    },
-  };
+    path: `/solucoes/${slug}`,
+  });
 }
 
 export default async function ProductPage({ params }: Params) {

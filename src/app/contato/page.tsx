@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -7,13 +6,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow, Heading, Text } from "@/components/ui/Typography";
 import { CONTACT, whatsappLink } from "@/lib/constants";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contato",
   description:
     "Converse com a ArestIA sobre IA, automação e gestão empresarial. Conte o desafio do seu negócio e solicite uma demonstração.",
-  alternates: { canonical: "/contato" },
-};
+  path: "/contato",
+});
 
 export default function ContatoPage() {
   const whatsapp = whatsappLink();
