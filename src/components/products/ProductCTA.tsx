@@ -40,7 +40,7 @@ export function ProductCTA({ slug, name, demoHref }: ProductCTAProps) {
         </Reveal>
 
         <Reveal inView delay={0.3} className="mt-16 border-t border-mist/15 pt-8">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-mist/60">Conheça também</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-mist/80">Conheça também</p>
           <ul className="mt-4 flex flex-wrap gap-x-8 gap-y-3">
             {others.map((p) => (
               <li key={p.slug}>

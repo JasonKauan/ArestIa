@@ -72,16 +72,14 @@ export function Segments() {
           <div className="flex flex-col lg:col-span-5 lg:col-start-8">
             <ul className="flex-1">
               {OTHER_SEGMENTS.map((segment, i) => (
-                <Reveal key={segment} inView delay={i * 0.08} y={16}>
-                  <li className="group flex items-baseline gap-5 border-t border-mist/15 py-6 last:border-b">
+                <Reveal key={segment} inView delay={i * 0.08} y={16} as="li" className="group flex items-baseline gap-5 border-t border-mist/15 py-6 last:border-b">
                     <span className="font-mono text-xs text-cyan/80">
                       {String(i + 2).padStart(2, "0")}
                     </span>
                     <span className="text-xl font-medium tracking-tight text-mist/80 transition-colors duration-300 group-hover:text-mist sm:text-2xl">
                       {segment}
                     </span>
-                  </li>
-                </Reveal>
+                  </Reveal>
               ))}
             </ul>
             <Reveal inView delay={0.4} y={12} className="mt-8">

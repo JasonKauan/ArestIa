@@ -22,7 +22,7 @@ function Word({
   progress: MotionValue<number>;
   highlighted: boolean;
 }) {
-  const opacity = useTransform(progress, range, [0.16, 1]);
+  const opacity = useTransform(progress, range, [0.6, 1]);
   return (
     <motion.span
       style={{ opacity }}

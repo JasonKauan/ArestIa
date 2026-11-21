@@ -137,7 +137,7 @@ export function DashboardDemo() {
               <div key={kpi.label} className="rounded-xl border border-mist/10 bg-mist/[0.03] p-4">
                 <dt className="text-[11px] uppercase tracking-[0.14em] text-mist/55">{kpi.label}</dt>
                 <dd className="mt-2 text-xl font-semibold tracking-tight">{kpi.value}</dd>
-                <p className="mt-1 text-[11px] text-mist/55">{kpi.hint}</p>
+                <dd className="mt-1 text-[11px] text-mist/55">{kpi.hint}</dd>
               </div>
             ))}
           </dl>
@@ -183,7 +183,12 @@ export function DashboardDemo() {
             </div>
           </div>
 
-          <div className="mt-6 overflow-x-auto">
+          <div
+            className="mt-6 overflow-x-auto"
+            tabIndex={0}
+            role="region"
+            aria-label="Últimas movimentações (dados fictícios), role para o lado se necessário"
+          >
             <table className="w-full min-w-[28rem] text-left text-[13px]">
               <caption className="sr-only">Últimas movimentações (dados fictícios)</caption>
               <thead>

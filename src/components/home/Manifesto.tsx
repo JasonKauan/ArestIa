@@ -48,8 +48,7 @@ export function Manifesto() {
 
           <ul className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
             {TRANSFORMATIONS.map((item, i) => (
-              <Reveal key={item.from} inView delay={i * 0.12} y={16}>
-                <li className="group flex items-center gap-5 border-t border-navy/15 py-5 last:border-b">
+              <Reveal key={item.from} inView delay={i * 0.12} y={16} as="li" className="group flex items-center gap-5 border-t border-navy/15 py-5 last:border-b">
                   <span className="w-28 shrink-0 font-mono text-xs uppercase tracking-[0.15em] text-navy/60">
                     {item.from}
                   </span>
@@ -60,8 +59,7 @@ export function Manifesto() {
                   <span className="text-base font-medium tracking-tight text-navy sm:text-lg">
                     {item.to}
                   </span>
-                </li>
-              </Reveal>
+                </Reveal>
             ))}
           </ul>
         </div>

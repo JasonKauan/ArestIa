@@ -104,8 +104,7 @@ export default function SobrePage() {
           </div>
           <ul>
             {PRODUCTS.map((product, i) => (
-              <Reveal key={product.slug} inView delay={i * 0.06} y={14}>
-                <li className="border-t border-navy/15 last:border-b">
+              <Reveal key={product.slug} inView delay={i * 0.06} y={14} as="li" className="border-t border-navy/15 last:border-b">
                   <Link
                     href={product.href}
                     className="group flex items-center gap-6 py-7 transition-colors hover:text-royal"
@@ -117,8 +116,7 @@ export default function SobrePage() {
                     </span>
                     <ArrowUpRight className="size-5 text-navy/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-royal" aria-hidden />
                   </Link>
-                </li>
-              </Reveal>
+                </Reveal>
             ))}
           </ul>
         </Container>

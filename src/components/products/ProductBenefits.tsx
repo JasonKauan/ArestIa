@@ -42,14 +42,12 @@ export function ProductBenefits({ integrations, benefits }: ProductBenefitsProps
           </Reveal>
           <ul className="mt-6">
             {benefits.map((benefit, i) => (
-              <Reveal key={benefit} inView delay={i * 0.06} y={12}>
-                <li className="flex items-start gap-4 border-t border-navy/15 py-5 last:border-b">
+              <Reveal key={benefit} inView delay={i * 0.06} y={12} as="li" className="flex items-start gap-4 border-t border-navy/15 py-5 last:border-b">
                   <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-navy">
                     <Check className="size-3.5 text-cyan" aria-hidden />
                   </span>
                   <span className="text-lg font-medium leading-snug tracking-tight">{benefit}</span>
-                </li>
-              </Reveal>
+                </Reveal>
             ))}
           </ul>
         </div>

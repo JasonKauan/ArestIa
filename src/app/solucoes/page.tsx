@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { FinalCTA } from "@/components/home/FinalCTA";
@@ -49,8 +47,7 @@ export default function SolucoesPage() {
             {PRODUCTS.map((product, i) => {
               const details = PRODUCT_DETAILS[product.slug];
               return (
-                <Reveal key={product.slug} inView delay={0.05} y={18}>
-                  <li className="border-t border-mist/15 last:border-b">
+                <Reveal key={product.slug} inView delay={0.05} y={18} as="li" className="border-t border-mist/15 last:border-b">
                     <Link
                       href={product.href}
                       className="group grid items-start gap-6 py-10 transition-colors hover:bg-mist/[0.03] md:grid-cols-[4rem_1fr_1.2fr_2rem] md:gap-8 md:px-2 md:py-12"
@@ -79,8 +76,7 @@ export default function SolucoesPage() {
                         aria-hidden
                       />
                     </Link>
-                  </li>
-                </Reveal>
+                  </Reveal>
               );
             })}
           </ul>

@@ -14,15 +14,18 @@ type RevealProps = {
   y?: number;
   /** true = anima quando entra na tela (ao rolar). false = anima ao montar (primeira dobra). */
   inView?: boolean;
+  /** Tag renderizada. Use "li" quando o Reveal for filho direto de <ul>/<ol> (HTML válido e acessível). */
+  as?: "div" | "li";
 };
 
 /** Entrada discreta (fade + leve subida). Respeita "reduzir movimento" via MotionConfig. */
-export function Reveal({ children, className, delay = 0, y = 24, inView = false }: RevealProps) {
+export function Reveal({ children, className, delay = 0, y = 24, inView = false, as = "div" }: RevealProps) {
   const transition = { duration: 0.8, delay, ease };
+  const Tag = as === "li" ? motion.li : motion.div;
 
   if (inView) {
     return (
-      <motion.div
+      <Tag
         className={cn(className)}
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,18 +33,18 @@ export function Reveal({ children, className, delay = 0, y = 24, inView = false 
         transition={transition}
       >
         {children}
-      </motion.div>
+      </Tag>
     );
   }
 
   return (
-    <motion.div
+    <Tag
       className={cn(className)}
       initial={{ opacity: 0, y }}
       animate={{ opacity: 1, y: 0 }}
       transition={transition}
     >
       {children}
-    </motion.div>
+    </Tag>
   );
 }
