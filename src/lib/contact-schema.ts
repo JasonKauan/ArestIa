@@ -8,7 +8,7 @@ export const SOLUTION_OPTIONS = [
   { value: "llm-personalizado", label: "ArestIA AI — LLM personalizado" },
   { value: "chatbot-whatsapp", label: "ArestIA Automation — Chatbot de agendamento" },
   { value: "erp", label: "ArestIA Systems — ERP empresarial" },
-  { value: "outra", label: "Solução personalizada / ainda não sei" },
+  { value: "outra", label: "Outra / ainda não sei" },
 ] as const;
 
 export type SolutionValue = (typeof SOLUTION_OPTIONS)[number]["value"];

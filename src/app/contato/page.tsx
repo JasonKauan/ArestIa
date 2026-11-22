@@ -78,7 +78,7 @@ export default function ContatoPage() {
           </div>
 
           <Reveal delay={0.15} className="lg:col-span-7">
-            <div data-tone="light" className="rounded-3xl bg-mist p-6 text-navy sm:p-10">
+            <div data-tone="light" className="rounded-3xl bg-mist p-6 text-navy [color-scheme:light] sm:p-10">
               <Suspense fallback={<div className="min-h-[34rem]" aria-hidden />}>
                 <ContactForm whatsappHref={whatsapp} email={CONTACT.email} />
               </Suspense>

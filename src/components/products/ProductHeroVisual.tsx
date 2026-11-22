@@ -88,7 +88,7 @@ function ERPVisual() {
     { y: 110, label: "RELATÓRIOS", color: "#3CEBFF" },
   ];
   return (
-    <svg viewBox="0 0 520 400" fill="none" role="img" aria-label="Ilustração: camadas empilhadas representando os módulos integrados de um sistema de gestão." className="h-auto w-full">
+    <svg viewBox="0 0 590 400" fill="none" role="img" aria-label="Ilustração: camadas empilhadas representando os módulos integrados de um sistema de gestão." className="h-auto w-full">
       {layers.map((l, i) => (
         <g key={l.label}>
           <motion.path
@@ -100,7 +100,7 @@ function ERPVisual() {
             {...draw(i * 0.25, 1.2)}
           />
           <motion.path d={`M360,${l.y} H392`} stroke="#F8FAFC" strokeOpacity="0.3" {...draw(0.9 + i * 0.15, 0.5)} />
-          <motion.text x="402" y={l.y + 4} fill="#F8FAFC" fillOpacity="0.6" fontSize="12" letterSpacing="1.5" className="font-mono" {...fade(1.1 + i * 0.15)}>
+          <motion.text x="402" y={l.y + 4} fill="#F8FAFC" fillOpacity="0.6" fontSize="16" letterSpacing="1.5" className="font-mono" {...fade(1.1 + i * 0.15)}>
             {l.label}
           </motion.text>
         </g>
