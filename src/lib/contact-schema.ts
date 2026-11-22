@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+// Evita o teste de eval do zod (otimização JIT), que a CSP do site bloqueia. Sem efeito prático aqui.
+z.config({ jitless: true });
+
 /** Opções do campo "solução de interesse" (o valor é o slug da página do produto). */
 export const SOLUTION_OPTIONS = [
   { value: "llm-personalizado", label: "ArestIA AI — LLM personalizado" },

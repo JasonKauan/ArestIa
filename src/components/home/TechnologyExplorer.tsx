@@ -91,7 +91,7 @@ export function TechnologyExplorer() {
 
       <div className="lg:col-span-7">
         <svg
-          viewBox="0 40 600 520"
+          viewBox="-40 40 680 520"
           role="img"
           aria-label="Diagrama de conexão entre os pilares tecnológicos da ArestIA: IA e LLMs, RAG, automação, integrações, engenharia de software e dados."
           className="mx-auto h-auto w-full max-w-[40rem]"
@@ -177,7 +177,7 @@ export function TechnologyExplorer() {
                   fill="#010C22"
                   fillOpacity={isActive ? 0.9 : 0.65}
                   className="font-mono"
-                  fontSize="12"
+                  fontSize="16"
                   letterSpacing="1.5"
                   style={{ transition: "fill-opacity 0.35s" }}
                 >

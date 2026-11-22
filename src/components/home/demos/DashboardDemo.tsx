@@ -78,7 +78,7 @@ export function DashboardDemo() {
     { label: "Receita", value: brl(revenue), hint: data.delta },
     { label: "Despesas", value: brl(expenses), hint: "no período" },
     { label: "Resultado", value: brl(revenue - expenses), hint: "receita − despesas" },
-    { label: "Pedidos em aberto", value: String(data.open), hint: "aguardando" },
+    { label: "Pedidos", value: String(data.open), hint: "em aberto" },
   ];
 
   return (
@@ -189,11 +189,11 @@ export function DashboardDemo() {
             role="region"
             aria-label="Últimas movimentações (dados fictícios), role para o lado se necessário"
           >
-            <table className="w-full min-w-[28rem] text-left text-[13px]">
+            <table className="w-full text-left text-[13px] sm:min-w-[28rem]">
               <caption className="sr-only">Últimas movimentações (dados fictícios)</caption>
               <thead>
                 <tr className="border-b border-mist/10 text-[11px] uppercase tracking-[0.14em] text-mist/55">
-                  <th className="pb-3 font-normal">Código</th>
+                  <th className="hidden pb-3 font-normal sm:table-cell">Código</th>
                   <th className="pb-3 font-normal">Origem</th>
                   <th className="pb-3 font-normal">Valor</th>
                   <th className="pb-3 text-right font-normal">Status</th>
@@ -202,7 +202,7 @@ export function DashboardDemo() {
               <tbody>
                 {TRANSACTIONS.map((t) => (
                   <tr key={t.id} className="border-b border-mist/5 last:border-0">
-                    <td className="py-3 font-mono text-mist/55">{t.id}</td>
+                    <td className="hidden py-3 font-mono text-mist/55 sm:table-cell">{t.id}</td>
                     <td className="py-3 text-mist/85">{t.who}</td>
                     <td className="py-3 text-mist/85">{t.value}</td>
                     <td className="py-3 text-right">

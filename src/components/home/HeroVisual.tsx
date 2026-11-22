@@ -10,6 +10,9 @@ import { motion } from "motion/react";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
+/** Fator de velocidade da animação de entrada (menor = mais rápida). Mantém o efeito e acelera a página ficar "completa". */
+const S = 0.55;
+
 // Geometria do símbolo (mesmas coordenadas do logo original, espaço 1000x1000)
 const OUTER =
   "M506.6,696.8c-76.9-45.2-153.8-90.3-230.7-135.5c0-86.5,0-173.1,0-259.6c75.1-43.2,150.2-86.3,225.2-129.5c74,43.4,148,86.8,221.9,130.1c-0.2,88.7-0.4,177.5-0.7,266.2C650.5,611.3,578.6,654,506.6,696.8z";
@@ -52,7 +55,7 @@ function draw(delay: number, duration = 1.4) {
   return {
     initial: { pathLength: 0, opacity: 0 },
     animate: { pathLength: 1, opacity: 1 },
-    transition: { duration, delay, ease },
+    transition: { duration: duration * S, delay: delay * S, ease },
   };
 }
 
@@ -80,7 +83,7 @@ export function HeroVisual({ className }: { className?: string }) {
         fill="url(#hero-glow)"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease }}
+        transition={{ duration: 2 * S, ease }}
       />
 
       <motion.g
@@ -109,7 +112,7 @@ export function HeroVisual({ className }: { className?: string }) {
           vectorEffect="non-scaling-stroke"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.6, delay: 0.4, ease }}
+          transition={{ duration: 1.6 * S, delay: 0.4 * S, ease }}
         />
 
         {/* símbolo */}
@@ -159,7 +162,7 @@ export function HeroVisual({ className }: { className?: string }) {
               <motion.g
                 initial={{ opacity: 0, scale: 0.4 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 2 + i * 0.12, ease }}
+                transition={{ duration: 0.7 * S, delay: (2 + i * 0.12) * S, ease }}
                 style={{ transformOrigin: `${node.x}px ${node.y}px`, transformBox: "view-box" }}
               >
                 <circle cx={node.x} cy={node.y} r="11" stroke="#3CEBFF" strokeOpacity="0.25" />
@@ -182,7 +185,7 @@ export function HeroVisual({ className }: { className?: string }) {
               <circle r="2.5" fill="#3CEBFF" opacity="0" className="motion-safe-only">
                 <animateMotion
                   dur={`${node.pulseDur}s`}
-                  begin={`${node.pulseBegin}s`}
+                  begin={`${(node.pulseBegin * S).toFixed(2)}s`}
                   repeatCount="indefinite"
                   path={path}
                 />
@@ -191,7 +194,7 @@ export function HeroVisual({ className }: { className?: string }) {
                   values="0;1;1;0"
                   keyTimes="0;0.15;0.85;1"
                   dur={`${node.pulseDur}s`}
-                  begin={`${node.pulseBegin}s`}
+                  begin={`${(node.pulseBegin * S).toFixed(2)}s`}
                   repeatCount="indefinite"
                 />
               </circle>

@@ -18,33 +18,37 @@ type RevealProps = {
   as?: "div" | "li";
 };
 
-/** Entrada discreta (fade + leve subida). Respeita "reduzir movimento" via MotionConfig. */
+/**
+ * Entrada discreta (fade + leve subida).
+ *
+ * - inView (ao rolar): usa o Motion; respeita "reduzir movimento" via MotionConfig.
+ * - primeira dobra: usa uma animação CSS (.reveal-load, em globals.css). Assim o texto aparece assim
+ *   que o CSS carrega, sem esperar o JavaScript hidratar — o que melhora a percepção de velocidade.
+ *   Com "reduzir movimento" ligado, o CSS global já encerra a animação instantaneamente.
+ */
 export function Reveal({ children, className, delay = 0, y = 24, inView = false, as = "div" }: RevealProps) {
-  const transition = { duration: 0.8, delay, ease };
-  const Tag = as === "li" ? motion.li : motion.div;
-
-  if (inView) {
+  if (!inView) {
+    const Tag = as;
     return (
       <Tag
-        className={cn(className)}
-        initial={{ opacity: 0, y }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={transition}
+        className={cn("reveal-load", className)}
+        style={{ "--reveal-delay": `${delay}s`, "--reveal-y": `${y}px` } as React.CSSProperties}
       >
         {children}
       </Tag>
     );
   }
 
+  const MotionTag = as === "li" ? motion.li : motion.div;
   return (
-    <Tag
+    <MotionTag
       className={cn(className)}
       initial={{ opacity: 0, y }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={transition}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.8, delay, ease }}
     >
       {children}
-    </Tag>
+    </MotionTag>
   );
 }
