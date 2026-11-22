@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { Header } from "@/components/layout/Header";
 import { Providers } from "@/components/providers";
-import { SITE } from "@/lib/constants";
+import { SITE, whatsappLink } from "@/lib/constants";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,6 +38,9 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  // O botão flutuante só existe se o WhatsApp comercial estiver configurado (NEXT_PUBLIC_WHATSAPP_NUMBER).
+  const whatsapp = whatsappLink("Olá! Gostaria de conversar com a ArestIA.");
+
   return (
     <html
       lang="pt-BR"
@@ -53,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
           {children}
           <Footer />
+          {whatsapp && <FloatingWhatsApp href={whatsapp} />}
         </Providers>
       </body>
     </html>
